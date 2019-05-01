@@ -21,14 +21,9 @@ public class WebSocketResource {
         this.template = template;
     }
 
-    @MessageMapping("/send/message")
-    public void onReceivedMessage(String message){
-        this.template.convertAndSend("/chat", new SimpleDateFormat("HH:mm:ss")
-                     .format(new Date())+"- "+message);
-    }
-
     @MessageMapping("/{roomId}")
-    private void sendMessageTpPrivateRoom(String message, @DestinationVariable ObjectId roomId) throws IOException {
+    private void sendMessageTpPrivateRoom(String message, @DestinationVariable String roomId) throws IOException {
+        System.out.println(message);
         this.template.convertAndSend("/privateRoom/" + roomId, message);
     }
 }
