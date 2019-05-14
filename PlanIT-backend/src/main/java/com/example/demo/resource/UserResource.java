@@ -1,9 +1,11 @@
 package com.example.demo.resource;
 
+import com.example.demo.model.Room;
 import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,5 +22,10 @@ public class UserResource {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<UserDto> findall(){
         return userService.findall();
+    }
+
+    @RequestMapping(value = "/allRooms/{id}", method = RequestMethod.GET)
+    public List<Room> findallRooms(@PathVariable Integer id){
+        return userService.findRoomsForAUser(userService.findById(id));
     }
 }

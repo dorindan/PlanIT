@@ -1,6 +1,5 @@
 package com.example.demo.resource;
 
-import com.sun.corba.se.spi.ior.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -22,8 +21,13 @@ public class WebSocketResource {
     }
 
     @MessageMapping("/{roomId}")
-    private void sendMessageTpPrivateRoom(String message, @DestinationVariable String roomId) throws IOException {
+    private void sendMessageToPrivateRoom(String message, @DestinationVariable String roomId) throws IOException {
         System.out.println(message);
         this.template.convertAndSend("/privateRoom/" + roomId, message);
+    }
+
+    @MessageMapping("/send/message")
+    public void onReceivedMesage(String message){
+        this.template.convertAndSend("/chat",  new SimpleDateFormat("HH:mm:ss").format(new Date())+"- "+message);
     }
 }

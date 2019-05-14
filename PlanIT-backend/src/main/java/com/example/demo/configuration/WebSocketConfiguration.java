@@ -21,5 +21,6 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app")
                 .enableSimpleBroker("/privateRoom");
+//                .enableSimpleBroker("/chat");
     }
 }

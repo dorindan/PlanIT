@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -8,12 +11,15 @@ import java.util.Objects;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String username;
     private String password;
 
+    @JsonIgnore
+    @ManyToMany(mappedBy = "users")
+    private List<Room> rooms;
 
     public Integer getId() {
         return id;
@@ -22,6 +28,16 @@ public class User {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+
 
     public String getUsername() {
         return username;
@@ -38,6 +54,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 
     public User() {
     }

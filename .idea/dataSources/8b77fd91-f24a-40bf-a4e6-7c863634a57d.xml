@@ -94,8 +94,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-05-01.02:08:57.786</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1558</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-05-13.20:18:41.617</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1765</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -141,64 +141,87 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <table id="26" parent="19" name="flyway_schema_history">
+    <sequence id="26" parent="19" name="hibernate_sequence">
+      <ObjectId>98767</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1748</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="27" parent="19" name="flyway_schema_history">
       <ObjectId>81947</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>1557</StateNumber>
     </table>
-    <table id="27" parent="19" name="users">
-      <ObjectId>81957</ObjectId>
+    <table id="28" parent="19" name="messages">
+      <ObjectId>98769</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>1754</StateNumber>
     </table>
-    <column id="28" parent="26" name="installed_rank">
+    <table id="29" parent="19" name="room_user">
+      <ObjectId>98774</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1756</StateNumber>
+    </table>
+    <table id="30" parent="19" name="rooms">
+      <ObjectId>98777</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1756</StateNumber>
+    </table>
+    <table id="31" parent="19" name="users">
+      <ObjectId>98782</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1755</StateNumber>
+    </table>
+    <column id="32" parent="27" name="installed_rank">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="29" parent="26" name="version">
+    <column id="33" parent="27" name="version">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <StateNumber>1557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="30" parent="26" name="description">
+    <column id="34" parent="27" name="description">
       <Position>3</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="31" parent="26" name="type">
+    <column id="35" parent="27" name="type">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="32" parent="26" name="script">
+    <column id="36" parent="27" name="script">
       <Position>5</Position>
       <DataType>varchar(1000)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="33" parent="26" name="checksum">
+    <column id="37" parent="27" name="checksum">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>1557</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="34" parent="26" name="installed_by">
+    <column id="38" parent="27" name="installed_by">
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="35" parent="26" name="installed_on">
+    <column id="39" parent="27" name="installed_on">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
@@ -206,61 +229,162 @@
       <DefaultExpression>now()</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="36" parent="26" name="execution_time">
+    <column id="40" parent="27" name="execution_time">
       <Position>9</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="37" parent="26" name="success">
+    <column id="41" parent="27" name="success">
       <Position>10</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1557</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="38" parent="26" name="flyway_schema_history_pk">
+    <index id="42" parent="27" name="flyway_schema_history_pk">
       <ObjectId>81954</ObjectId>
       <ColNames>installed_rank</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="39" parent="26" name="flyway_schema_history_s_idx">
+    <index id="43" parent="27" name="flyway_schema_history_s_idx">
       <ObjectId>81956</ObjectId>
       <ColNames>success</ColNames>
     </index>
-    <key id="40" parent="26" name="flyway_schema_history_pk">
+    <key id="44" parent="27" name="flyway_schema_history_pk">
       <ObjectId>81955</ObjectId>
       <ColNames>installed_rank</ColNames>
       <UnderlyingIndexName>flyway_schema_history_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="41" parent="27" name="id">
+    <column id="45" parent="28" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>1749</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="42" parent="27" name="username">
+    <column id="46" parent="28" name="message">
       <Position>2</Position>
-      <DataType>varchar(80)|0s</DataType>
-      <StateNumber>1558</StateNumber>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1749</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="43" parent="27" name="password">
+    <column id="47" parent="28" name="user_id">
       <Position>3</Position>
-      <DataType>varchar(80)|0s</DataType>
-      <StateNumber>1558</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1749</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <index id="44" parent="27" name="users_pkey">
-      <ObjectId>81960</ObjectId>
+    <column id="48" parent="28" name="room_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1749</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="49" parent="28" name="messages_pkey">
+      <ObjectId>98772</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="45" parent="27" name="users_pkey">
-      <ObjectId>81961</ObjectId>
+    <key id="50" parent="28" name="messages_pkey">
+      <ObjectId>98773</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>messages_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="28" name="fk92hs6y8g4al98ihp4ms6nbxeq">
+      <ObjectId>98790</ObjectId>
+      <ColNames>room_id</ColNames>
+      <RefTableId>98777</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>rooms</RefTableName>
+      <RefKeyName>rooms_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="52" parent="29" name="room_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1750</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="53" parent="29" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1750</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="54" parent="29" name="fk4hmr8avmuwbes7oje2affp35y">
+      <ObjectId>98805</ObjectId>
+      <ColNames>room_id</ColNames>
+      <RefTableId>98777</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>rooms</RefTableName>
+      <RefKeyName>rooms_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="55" parent="29" name="fkaqm4k7a8o6lq80j3l1rls58ux">
+      <ObjectId>98800</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>98782</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="56" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1751</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="57" parent="30" name="room_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1751</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="58" parent="30" name="rooms_pkey">
+      <ObjectId>98780</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="30" name="rooms_pkey">
+      <ObjectId>98781</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>rooms_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="31" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1752</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="61" parent="31" name="password">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1752</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="31" name="username">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1752</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="63" parent="31" name="users_pkey">
+      <ObjectId>98788</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="64" parent="31" name="users_pkey">
+      <ObjectId>98789</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

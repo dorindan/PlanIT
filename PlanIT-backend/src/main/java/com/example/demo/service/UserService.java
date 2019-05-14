@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.converter.UserConverter;
+import com.example.demo.model.Room;
 import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.repository.UserRepository;
@@ -29,4 +30,13 @@ public class UserService {
         }
         return userDtoList;
     }
+
+    public List <Room> findRoomsForAUser(User user){
+        return user.getRooms();
+    }
+
+    public User findById(int id) {
+        return userRepository.findById(id);
+    }
+
 }
