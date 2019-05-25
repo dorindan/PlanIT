@@ -94,8 +94,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-05-13.20:18:41.617</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1765</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-05-14.14:35:32.050</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1769</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -157,7 +157,7 @@
     <table id="28" parent="19" name="messages">
       <ObjectId>98769</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1754</StateNumber>
+      <StateNumber>1769</StateNumber>
     </table>
     <table id="29" parent="19" name="room_user">
       <ObjectId>98774</ObjectId>
@@ -271,11 +271,11 @@
       <StateNumber>1749</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="47" parent="28" name="user_id">
+    <column id="47" parent="28" name="username">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>1749</StateNumber>
-      <TypeId>23</TypeId>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1769</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="48" parent="28" name="room_id">
       <Position>4</Position>

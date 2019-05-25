@@ -1,5 +1,10 @@
 package com.example.demo.resource;
 
+import com.example.demo.model.Message;
+import com.example.demo.repository.MessageRepository;
+import com.example.demo.repository.RoomRepository;
+import com.example.demo.service.MessageService;
+import com.example.demo.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -16,14 +21,17 @@ public class WebSocketResource {
     private final SimpMessagingTemplate template;
 
     @Autowired
+    MessageService messageService;
+
+    @Autowired
     WebSocketResource(SimpMessagingTemplate template){
         this.template = template;
     }
 
-    @MessageMapping("/{roomId}")
-    private void sendMessageToPrivateRoom(String message, @DestinationVariable String roomId) throws IOException {
-        System.out.println(message);
-        this.template.convertAndSend("/privateRoom/" + roomId, message);
+    @MessageMapping("/{roomName}/{username}")
+    private void sendMessageToPrivateRoom(String message,@DestinationVariable String roomName, @DestinationVariable String username) throws IOException {
+        messageService.save(message,roomName,username);
+        this.template.convertAndSend("/privateRoom/" + roomName, message);
     }
 
     @MessageMapping("/send/message")

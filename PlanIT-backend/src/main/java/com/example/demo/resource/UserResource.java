@@ -5,11 +5,9 @@ import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
@@ -18,6 +16,17 @@ public class UserResource {
 
     @Autowired
     UserService userService;
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public UserDto login(@NotNull @RequestBody UserDto userDto) {
+        System.out.println(userDto);
+        return userService.login(userDto);
+    }
+
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
+    public UserDto signUp(@NotNull @RequestBody UserDto userDto) {
+        return userService.register(userDto);
+    }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<UserDto> findall(){
@@ -28,4 +37,11 @@ public class UserResource {
     public List<Room> findallRooms(@PathVariable Integer id){
         return userService.findRoomsForAUser(userService.findById(id));
     }
+
+    @RequestMapping(value = "/{username}", method = RequestMethod.GET)
+    public UserDto findByUsername(@PathVariable String username){
+        return userService.findByUsername(username);
+    }
+
+
 }

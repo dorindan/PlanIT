@@ -14,8 +14,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String username;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "username")
+    private String username;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "users")

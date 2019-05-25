@@ -1,7 +1,9 @@
 package com.example.demo.resource;
 
 import com.example.demo.model.Room;
+import com.example.demo.model.dto.RoomDto;
 import com.example.demo.repository.RoomRepository;
+import com.example.demo.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +16,18 @@ import java.util.List;
 @RequestMapping(value = "/room")
 public class RoomResource {
 
+
     @Autowired
-    RoomRepository roomRepository;
+    RoomService roomService;
 
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public Room findRoomByUsername(@PathVariable String name) {
-        return roomRepository.findByRoomName(name);
+    public RoomDto findRoomByUsername(@PathVariable String name) {
+        return roomService.findByName(name);
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public List<Room> findAll() {
-        return roomRepository.findAll();
-    }
+//    @RequestMapping(value = "/{name}", method = RequestMethod.POST)
+//    public void saveRoom(@PathVariable String name) {
+//        roomService.saveRoom(name);
+//    }
+
 }

@@ -3,6 +3,7 @@ package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,11 +22,12 @@ public class Room {
             inverseJoinColumns = {@JoinColumn(name = "user_id")})
     List<User> users;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "room")
     List<Message> messages;
 
     public Room(String room_name) {
         this.roomName = room_name;
+        users = new ArrayList<>();
     }
 
     public Room() {
@@ -68,7 +70,6 @@ public class Room {
         return "Room{" +
                 "id=" + id +
                 ", room_name='" + roomName + '\'' +
-                ", users=" + users +
                 '}';
     }
 }

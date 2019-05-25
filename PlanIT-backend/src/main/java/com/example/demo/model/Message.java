@@ -19,15 +19,15 @@ public class Message {
     @JoinColumn(name="room_id")
     private Room room;
 
-    private Integer user_id;
+    private String username;
 
     public Message() {
     }
 
-    public Message(String message, Room room, Integer user_id) {
+    public Message(String message, Room room, String username) {
         this.message = message;
         this.room = room;
-        this.user_id = user_id;
+        this.username = username;
     }
 
     public Integer getId() {
@@ -54,12 +54,12 @@ public class Message {
         this.room = room;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Message {
                 "id=" + id +
                 ", message='" + message + '\'' +
                 ", room=" + room +
-                ", user_id=" + user_id +
+                ", username='" + username + '\'' +
                 '}';
     }
 }

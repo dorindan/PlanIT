@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.converter.UserConverter;
+import com.example.demo.exception.ForbiddenException;
+import com.example.demo.exception.NotFoundException;
 import com.example.demo.model.Room;
 import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
@@ -9,7 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class UserService {
@@ -19,6 +24,9 @@ public class UserService {
 
     @Autowired
     UserConverter userConverter;
+
+    @Autowired
+    RoomService roomService;
 
     public List<UserDto> findall(){
         List<User> userList= userRepository.findAll();
@@ -39,4 +47,50 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    public UserDto login(UserDto userDto) {
+        User convertedUser = userConverter.toUser(userDto);
+        User user = userRepository.findAll().stream()
+                .filter(filteredUser -> convertedUser.getPassword().equals(filteredUser.getPassword()) &&
+                        convertedUser.getUsername().equals(filteredUser.getUsername()))
+                .findFirst().orElse(null);
+
+        if (user == null) {
+            throw new ForbiddenException("Username or password are wrong");
+        }
+        return new UserDto(user.getUsername(), user.getPassword());
+
+    }
+
+    public UserDto register(UserDto userDto) {
+        if (findByUsername(userDto.getUsername()) != null)
+            throw new ForbiddenException("Username is taken");
+        User user = userConverter.toUser(userDto);
+        List <Room> rooms = new ArrayList<>();
+        for (User user1 : userRepository.findAll()){
+            List <String> users = new ArrayList<>();
+            users.add(userDto.getUsername());
+            users.add(user1.getUsername());
+            Collections.sort(users);
+
+            Room room = new Room(users.get(0) + "_" + users.get(1));
+
+            user1.getRooms().add(room);
+            room.getUsers().add(user);
+            room.getUsers().add(user1);
+            rooms.add(room);
+        }
+        User newUser = userRepository.save(user);
+        for (Room room : rooms){
+            roomService.saveRoom(room);
+        }
+        return new UserDto(newUser.getUsername());
+    }
+
+    public UserDto findByUsername(String username){
+        UserConverter userConverter = new UserConverter();
+        UserDto userDto = userConverter.toUserDto(userRepository.findByUsername(username));
+        if (userDto != null)
+            return userDto;
+        return null;
+    }
 }

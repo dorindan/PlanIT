@@ -13,6 +13,10 @@ public class UserDto {
         this.password = password;
     }
 
+    public UserDto(String username) {
+        this.username = username;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -27,5 +31,13 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
