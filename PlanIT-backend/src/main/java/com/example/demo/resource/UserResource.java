@@ -42,6 +42,4 @@ public class UserResource {
     public UserDto findByUsername(@PathVariable String username){
         return userService.findByUsername(username);
     }
-
-
 }
