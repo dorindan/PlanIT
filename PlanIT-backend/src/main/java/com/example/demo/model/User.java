@@ -21,9 +21,28 @@ public class User {
     @Column(name = "username")
     private String username;
 
+    @OneToMany(mappedBy = "owner")
+    List<Event> ownedEvents;
+
+
     @JsonIgnore
     @ManyToMany(mappedBy = "users")
     private List<Room> rooms;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "user_event",
+            joinColumns = {@JoinColumn(name = "event_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id")})
+    private List<Event> eventList;
+
+    public List<Event> getEventList() {
+        return eventList;
+    }
+
+    public void setEventList(List<Event> eventList) {
+        this.eventList = eventList;
+    }
 
     public Integer getId() {
         return id;
@@ -42,7 +61,6 @@ public class User {
     }
 
 
-
     public String getUsername() {
         return username;
     }
@@ -58,7 +76,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 
     public User() {

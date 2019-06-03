@@ -16,7 +16,7 @@ public class Message {
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(name="room_id")
+    @JoinColumn(name = "room_id")
     private Room room;
 
     private String username;
