@@ -2,38 +2,183 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a23bd0b1-2128-4391-aa28-1827364e2018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PlanIT-backend/src/main/java/com/example/demo/service/LicentaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/material-module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/model/Event.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/model/Message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/model/Room.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/model/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/login/login.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/register/register.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/register/register.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/register/register.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/pages/register/register.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/services/api.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/services/event.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/services/room.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/services/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/PlanIT-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/PlanIT-frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlanIT-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/PlanIT-frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/dist/debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/src/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/src/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/src/node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/example/eventsource-polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/example/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/example/sse-client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/example/sse-server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/lib/eventsource-polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/lib/eventsource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/eventsource/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/autobahn_client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/haproxy.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/proxy_server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/sse.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/examples/ws.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/lib/faye/eventsource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/lib/faye/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/lib/faye/websocket/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/lib/faye/websocket/api/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/lib/faye/websocket/api/event_target.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/lib/faye/websocket/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/faye-websocket/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/http-parser-js/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/http-parser-js/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/http-parser-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/http-parser-js/http-parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/http-parser-js/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/inherits.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/inherits_browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json3/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json3/lib/json3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json3/lib/json3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/json3/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ms/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ms/license.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ms/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ms/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/original/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/original/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/original/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/original/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/querystringify/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/querystringify/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/querystringify/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/querystringify/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/requires-port/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/COPYING" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/Changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/dist/sockjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/dist/sockjs.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/dist/sockjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/dist/sockjs.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/event/close.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/event/emitter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/event/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/event/eventtarget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/event/trans-message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/facade.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/iframe-bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/info-ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/info-iframe-receiver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/info-iframe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/info-receiver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/location.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/shims.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/browser/eventsource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/browser/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/driver/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/driver/xhr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/eventsource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/htmlfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/iframe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/jsonp-polling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/lib/ajax-based.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/lib/buffered-sender.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/lib/polling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/receiver/eventsource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/receiver/htmlfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/receiver/jsonp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/receiver/xhr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/sender/jsonp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/sender/xdr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/sender/xhr-fake.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/sender/xhr-local.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/xdr-polling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/xdr-streaming.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/xhr-polling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/transport/xhr-streaming.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/browser-crypto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/escape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/iframe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/log.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/object.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/random.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/transport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/utils/url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/lib/version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/sockjs-client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/dist/url-parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/dist/url-parse.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/dist/url-parse.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/url-parse/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/draft75.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/draft76.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/headers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/hybi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/hybi/frame.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/hybi/message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/proxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/driver/stream_reader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/http_parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/lib/websocket/streams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-driver/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/pipeline/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/pipeline/cell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/pipeline/functor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/pipeline/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/pipeline/pledge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/pipeline/ring_buffer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/lib/websocket_extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/websocket-extensions/package.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/PlanIT-backend/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,7 +301,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlanIT-backend/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -315,68 +464,25 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1886" />
-    <option name="y" value="103" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1530" />
+    <option name="y" value="95" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanIT-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PlanIT" type="b2602c69:ProjectViewProjectNode" />
@@ -453,6 +559,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -466,7 +573,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559571435633" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quick-order" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="D:\development\PlanIT\PlanIT-frontend\node_modules\tslint" />
@@ -608,11 +715,12 @@
       <workItem from="1559566669899" duration="2487000" />
       <workItem from="1559591607229" duration="1915000" />
       <workItem from="1559630241251" duration="62000" />
+      <workItem from="1559992264105" duration="1037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327260000" />
+    <option name="totallyTimeSpent" value="328297000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -626,7 +734,7 @@
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21002132" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21215352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1017,7 +1125,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PlanIT-backend/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
