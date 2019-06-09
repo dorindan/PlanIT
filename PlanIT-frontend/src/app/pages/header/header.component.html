@@ -1,0 +1,48 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">PlanIT</h1>
+    <span class="fill-space"></span>
+    <div *ngIf="isAuthenticated()">
+      <h1>Hello, {{loggedUserUsername}}</h1>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav opened="true" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+
+        <div *ngIf="isAuthenticated()">
+          <a mat-list-item href="events">Events</a>
+        </div>
+
+        <div *ngIf="isAuthenticated()">
+        <a mat-list-item href="chat">Messages</a>
+        </div>
+
+        <div *ngIf="isAuthenticated()">
+          <a mat-list-item href="login">Logout</a>
+        </div>
+
+        <div *ngIf="!isAuthenticated()">
+          <a mat-list-item href="login">Login</a>
+        </div>
+
+        <div *ngIf="!isAuthenticated()">
+          <a mat-list-item href="register">Register</a>
+        </div>
+
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

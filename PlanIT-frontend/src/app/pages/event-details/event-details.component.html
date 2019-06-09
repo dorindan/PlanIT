@@ -1,0 +1,32 @@
+<dl>
+  <dt>Sport</dt>
+  <dd>{{event.sport}}</dd>
+  <dt>Location</dt>
+  <dd>{{event.location}}</dd>
+  <dt>Price/person</dt>
+  <dd>{{pricePerPerson}} lei</dd>
+  <dt>Scheduled time</dt>
+  <dd>{{event.dateAndHour}}</dd>
+  <dt>owner</dt>
+  <dd>{{event.owner.username}}</dd>
+  <dt>subscribed persons</dt>
+  <dd>{{event.subscribedPersons}}/{{event.maximumPersons}}</dd>
+  <dt>description</dt>
+  <dd>{{event.description}}</dd>
+  <!--<dt>subscribed</dt>-->
+  <!--<div *ngIf="loggedUser.subscribed === true">-->
+    <!--<dd>You are subscribed to this event</dd>-->
+  <!--</div>-->
+  <!--<div *ngIf="loggedUser.subscribed === false">-->
+    <!--<dd>You are not subscribed to this event</dd>-->
+  <!--</div>-->
+
+</dl>
+
+<!--<div *ngIf="!this.loggedUser.subscribed">-->
+  <a href="events" class="myButton">Subscribe</a>
+<!--</div>-->
+
+<!--<div *ngIf="this.loggedUser.subscribed">-->
+  <a href="events" class="unsubscribeButton">Unsubscribe</a>
+<!--</div>-->

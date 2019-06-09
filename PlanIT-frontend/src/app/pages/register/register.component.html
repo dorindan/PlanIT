@@ -1,0 +1,51 @@
+<div class="card signUP-panel">
+  <div class="card-header panel-heading">
+    <h1>Register</h1>
+  </div>
+  <div class="card-body">
+    <form style="display: block;">
+      <div class="form-group">
+        <div>
+          <label><b >Username</b></label>
+          &nbsp;
+          <label class="red small" *ngIf="!this.rightUsername">  *(Username must have at least 5 characters)</label>
+        </div>
+        <input autocomplete="new-password" type="text" (focusout)="validateUsername()" class="form-control"
+               placeholder="Enter Username" [(ngModel)]="userName" name="username"
+               required>
+      </div>
+      <div class="form-group">
+        <div>
+          <label><b>Password</b></label>
+          &nbsp;
+          <label class="red small" *ngIf="!this.rightPass">  *(Use 6 ore more characters)</label>
+          &nbsp;
+          <label class="red small" *ngIf="!this.rightRe_pass && this.rightPass">*(Password and confirm password need to be identical) </label>
+        </div>
+        <input autocomplete="new-password" class="form-control" [type]="hide ? 'password' : 'text'" name="psw" (focusout)="validatePassword()"
+               [type]="isActive ? 'text' : 'password'" placeholder="Enter Password"
+               [(ngModel)]="password" required>
+        <br>
+
+        <input [type]="hide ? 'password' : 'text'" (focusout)="validateRe_Password()" class="form-control "
+               [type]="isActive ? 'text' : 'password'"
+               placeholder="Confirm Password" [(ngModel)]="re_password"
+               name="rePassword" required>
+        <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+      </div>
+      <div class="form-group">
+
+        <button class="form-control btn-signUP" type="submit" (click)='register()'>
+          Register
+        </button>
+
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
