@@ -15,8 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/room")
 public class RoomResource {
-
-
     @Autowired
     RoomService roomService;
 
@@ -24,10 +22,4 @@ public class RoomResource {
     public RoomDto findRoomByUsername(@PathVariable String name) {
         return roomService.findByName(name);
     }
-
-//    @RequestMapping(value = "/{name}", method = RequestMethod.POST)
-//    public void saveRoom(@PathVariable String name) {
-//        roomService.saveRoom(name);
-//    }
-
 }

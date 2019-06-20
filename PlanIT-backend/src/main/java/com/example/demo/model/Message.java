@@ -30,6 +30,11 @@ public class Message {
         this.username = username;
     }
 
+    public Message(String message, String username) {
+        this.message = message;
+        this.username = username;
+    }
+
     public Integer getId() {
         return id;
     }

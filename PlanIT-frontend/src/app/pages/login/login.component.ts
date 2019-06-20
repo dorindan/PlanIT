@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           'token',
           rez.username
         );
-        this.router.navigate(['chat']);
+        this.router.navigate(['events']);
       }, error1 => {
         this.showSnackbar('Username or password is incorrect. Please try again.');
       });

@@ -9,11 +9,12 @@ import {MaterialModule} from './material-module';
 import {ChatComponent} from "./pages/chat/chat.component";
 import { HttpClientModule } from '@angular/common/http';
 import {LoginComponent} from "./pages/login/login.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RegisterComponent} from "./pages/register/register.component";
 import {MatDialogModule} from "@angular/material";
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
 import {EventsComponent} from "./pages/events/events.component";
+import { EventAddComponent } from './pages/event-add/event-add.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {EventsComponent} from "./pages/events/events.component";
     LoginComponent,
     RegisterComponent,
     EventsComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    EventAddComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import {EventsComponent} from "./pages/events/events.component";
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     EventDetailsComponent

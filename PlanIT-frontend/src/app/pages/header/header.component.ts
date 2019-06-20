@@ -22,7 +22,6 @@ export class HeaderComponent implements OnDestroy {
 
   ngOnInit(){
     this.loggedUserUsername = sessionStorage.getItem('token');
-
   }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

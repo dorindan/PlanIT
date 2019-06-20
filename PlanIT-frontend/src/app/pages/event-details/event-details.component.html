@@ -13,20 +13,19 @@
   <dd>{{event.subscribedPersons}}/{{event.maximumPersons}}</dd>
   <dt>description</dt>
   <dd>{{event.description}}</dd>
-  <!--<dt>subscribed</dt>-->
-  <!--<div *ngIf="loggedUser.subscribed === true">-->
-    <!--<dd>You are subscribed to this event</dd>-->
-  <!--</div>-->
-  <!--<div *ngIf="loggedUser.subscribed === false">-->
-    <!--<dd>You are not subscribed to this event</dd>-->
-  <!--</div>-->
-
+  <dt>subscribed</dt>
+  <dd *ngIf="subscribed === true"><i class="material-icons">done</i>You are subscribed to this event</dd>
+  <dd *ngIf="subscribed === false"><i class="material-icons">clear</i>You are not subscribed to this event</dd>
 </dl>
 
-<!--<div *ngIf="!this.loggedUser.subscribed">-->
-  <a href="events" class="myButton">Subscribe</a>
-<!--</div>-->
+<div *ngIf="!subscribed && event.subscribedPersons < event.maximumPersons">
+  <a href="events" (click)="subscribe()" class="myButton">Subscribe</a>
+</div>
 
-<!--<div *ngIf="this.loggedUser.subscribed">-->
-  <a href="events" class="unsubscribeButton">Unsubscribe</a>
-<!--</div>-->
+<div *ngIf="subscribed && !isOwner()">
+  <a href="events" (click)="unsubscribe()" class="unsubscribeButton">Unsubscribe</a>
+</div>
+
+<div *ngIf="isOwner()">
+  <a href="events" (click)="deleteEvent()" class="unsubscribeButton">Delete</a>
+</div>

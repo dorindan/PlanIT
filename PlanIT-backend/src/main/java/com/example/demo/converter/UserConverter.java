@@ -24,6 +24,7 @@ public class UserConverter {
         UserDto userDto = new UserDto();
         userDto.setUsername(user.getUsername());
         userDto.setPassword(user.getPassword());
+        userDto.setEventList(user.getEventList());
         return userDto;
     }
 }

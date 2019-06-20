@@ -7,8 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class EventDto {
@@ -30,8 +28,6 @@ public class EventDto {
     private String description;
 
     private User owner;
-
-    private List<User> userList;
 
     public EventDto() {
     }
@@ -110,11 +106,17 @@ public class EventDto {
         this.owner = owner;
     }
 
-    public List<User> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    @Override
+    public String toString() {
+        return "EventDto{" +
+                "sport='" + sport + '\'' +
+                ", location='" + location + '\'' +
+                ", cost=" + cost +
+                ", dateAndHour=" + dateAndHour +
+                ", subscribedPersons=" + subscribedPersons +
+                ", maximumPersons=" + maximumPersons +
+                ", description='" + description + '\'' +
+                ", owner=" + owner +
+                '}';
     }
 }

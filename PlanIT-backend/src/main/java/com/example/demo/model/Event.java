@@ -1,7 +1,10 @@
 package com.example.demo.model;
 
 import com.example.demo.service.CustomDateDeserializer;
+import com.example.demo.service.CustomDateSerializer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -23,6 +26,7 @@ public class Event {
     private double cost;
 
     @JsonDeserialize(using = CustomDateDeserializer.class)
+    @JsonSerialize(using = CustomDateSerializer.class)
     private Timestamp dateAndHour;
 
     private int subscribedPersons;
@@ -119,5 +123,21 @@ public class Event {
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", sport='" + sport + '\'' +
+                ", location='" + location + '\'' +
+                ", cost=" + cost +
+                ", dateAndHour=" + dateAndHour +
+                ", subscribedPersons=" + subscribedPersons +
+                ", maximumPersons=" + maximumPersons +
+                ", description='" + description + '\'' +
+                ", owner=" + owner +
+                ", userList=" + userList +
+                '}';
     }
 }

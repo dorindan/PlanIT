@@ -23,7 +23,7 @@
           </div>
           <div class="srch_bar">
             <div class="stylish-input-group">
-              <input type="text" class="search-bar" placeholder="Search">
+              <input #myInput type="text" class="search-bar" placeholder="Search" (input)="filterItem(myInput.value)">
               <span class="input-group-addon">
                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span></div>
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="mesgs">
-        <div class="msg_history">
+        <div id='messageBody' class="msg_history">
           <div *ngFor="let message of messages">
 
             <div class="outgoing_msg" *ngIf="message.username===loggedUserUsername">
@@ -62,12 +62,13 @@
               </div>
             </div>
 
-            <div class="incoming_msg" *ngIf="!(message.username===loggedUserUsername)">
+            <div class="incoming_msg" *ngIf="!(message.username === loggedUserUsername)">
               <div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
               </div>
               <div class="received_msg">
                 <div class="received_withd_msg">
                   <p>{{message.message}}</p>
+                  <br>
                   <!--<span class="time_date"> 11:01 AM    |    Yesterday</span>-->
                 </div>
               </div>

@@ -20,6 +20,7 @@ export class ChatComponent implements OnInit {
   private title = 'WebSockets chat';
   private stompClient = null;
   private users: User[];
+  private usersCopy: User[];
   private currentRoom: Room;
   private messages: Message[];
   private friendMessages: Message[];
@@ -32,8 +33,8 @@ export class ChatComponent implements OnInit {
     this.userService.getAllUsers().subscribe(response => {
        console.log(response);
       this.users = response;
+      this.usersCopy = response;
     });
-
   }
 
   constructor(
@@ -58,28 +59,30 @@ export class ChatComponent implements OnInit {
 
     this.stompClient.connect({}, (frame) =>{
       let rooom = that.currentRoomName;
-      that.stompClient.subscribe("/privateRoom/" + room, (message) => {
-        // console.log("bai deci eu am primit asa: " + message.body)
-        console.log(this.currentRoomName + "  yuhuuuuu");
-        if(message.body) {
-          // $(".msg_history").append("<div class='outgoing_msg'>  <div class='sent_msg'> <p>" + message.body + "</p> <span class='time_date'> 11:01 AM    |    June 9</span></div> </div>");
-          // $(".chat").append("<div class='message'>"+message.body+"</div>")
-          this.messages.push(new Message(message.body, this.loggedUserUsername));
-          // console.log(message.body);
+      that.stompClient.subscribe("/privateRoom/" + room, (mesaj) => {
+        let mesaju = JSON.parse(mesaj.body);
+        if(mesaju.message) {
+          this.messages.push(new Message(mesaju.message, mesaju.username));
+          console.log(this.messages);
         }
       });
     });
   }
 
   sendMessage(message){
+    var messageBody = document.querySelector('#messageBody');
     $(function () {
       $('#message').val("");
     });
     var names: string[] =[this.clickedUser.username, this.loggedUserUsername];
     names.sort();
-    console.log(this.currentRoomName);
     this.stompClient.send("/app/" + this.currentRoomName + "/" + this.loggedUserUsername, {}, message);
     $('#input').val('');
+    $(".messages").animate({ scrollTop: $(document).height() }, "slow");
+    setTimeout(function(){
+      var messageBody = document.querySelector('#messageBody');
+      messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+    }, 200);
   }
 
   openChat(user){
@@ -89,15 +92,33 @@ export class ChatComponent implements OnInit {
     this.currentRoomName = names[0] + "_" + names[1];
     this.initializeWebSocketConnection(this.currentRoomName);
     this.roomService.getRoom(names[0] + "_" + names[1]).subscribe(response => {
-      // this.currentRoom = response;
       this.messages = response.messages;
     });
+    setTimeout(function(){
+      var messageBody = document.querySelector('#messageBody');
+      messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+    }, 200);
+
   }
 
   sortArray(personCommunicatingWith:string, loggedUser:string){
     var names: string[] =[personCommunicatingWith, loggedUser];
     names.sort();
     return names;
+  }
+
+  filterItem(name){
+    if(!name){
+      this.assignCopy();
+    } // when nothing has typed
+
+    this.users = Object.assign([], this.usersCopy).filter(
+      item => item.username.toLowerCase().indexOf(name.toLowerCase()) > -1
+    )
+  }
+
+  assignCopy(){
+    this.users = Object.assign([], this.usersCopy);
   }
 
 

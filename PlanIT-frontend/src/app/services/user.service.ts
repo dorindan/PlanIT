@@ -19,4 +19,8 @@ export class UserService {
   login(authData: User): Observable<any> {
     return this.apiService.postRequest('api/user/login', authData);
   }
+
+  getUserByUsername(username: string): Observable<User>{
+    return this.apiService.getRequest("api/user/" + username);
+  }
 }

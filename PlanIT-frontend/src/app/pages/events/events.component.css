@@ -2,7 +2,24 @@ table {
   width: 100%;
 }
 
-button{
-  color: red;
+.details-button {
+  color: #673ab7;
   margin-left: 15%;
+}
+
+.add-button{
+  margin-left: 40%;
+  width: 15%;
+  font-size: x-large;
+  background-color: #673ab7;
+  color: #fef6ff;
+}
+
+
+i{
+  margin-left: 15%;
+}
+
+.myInline{
+  float: right;
 }

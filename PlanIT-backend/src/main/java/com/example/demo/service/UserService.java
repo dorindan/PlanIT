@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.converter.UserConverter;
 import com.example.demo.exception.ForbiddenException;
 import com.example.demo.exception.NotFoundException;
+import com.example.demo.model.Event;
 import com.example.demo.model.Room;
 import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
@@ -39,6 +40,14 @@ public class UserService {
         return userDtoList;
     }
 
+    public void saveUser(User user){
+        userRepository.save(user);
+    }
+
+    public List<User> all(){
+        return userRepository.findAll();
+    }
+
     public List <Room> findRoomsForAUser(User user){
         return user.getRooms();
     }
@@ -62,7 +71,7 @@ public class UserService {
     }
 
     public UserDto register(UserDto userDto) {
-        if (findByUsername(userDto.getUsername()) != null)
+        if (findUserDtoByUsername(userDto.getUsername()) != null)
             throw new ForbiddenException("Username is taken");
         User user = userConverter.toUser(userDto);
         List <Room> rooms = new ArrayList<>();
@@ -86,11 +95,15 @@ public class UserService {
         return new UserDto(newUser.getUsername());
     }
 
-    public UserDto findByUsername(String username){
+    public UserDto findUserDtoByUsername(String username){
         UserConverter userConverter = new UserConverter();
         UserDto userDto = userConverter.toUserDto(userRepository.findByUsername(username));
         if (userDto != null)
             return userDto;
         return null;
+    }
+
+    public User findUserByUsername(String username){
+        return userRepository.findByUsername(username);
     }
 }

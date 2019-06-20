@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -32,8 +33,8 @@ public class User {
     @JsonIgnore
     @ManyToMany
     @JoinTable(name = "user_event",
-            joinColumns = {@JoinColumn(name = "event_id")},
-            inverseJoinColumns = {@JoinColumn(name = "user_id")})
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "event_id")})
     private List<Event> eventList;
 
     public List<Event> getEventList() {

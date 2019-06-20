@@ -1,0 +1,129 @@
+<!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">-->
+  <!--{{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
+<!--</button>-->
+<a href="events" class="previous">&laquo; Go back to events</a>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Sport</ng-template>
+      <mat-form-field>
+        <mat-select [(value)]="sport">
+          <mat-option value="Tennis">Tennis</mat-option>
+          <mat-option value="Football">Football</mat-option>
+          <mat-option value="Handball">Handball</mat-option>
+          <mat-option value="Table Tennis">Table Tennis</mat-option>
+          <mat-option value="Basketball">Basketball</mat-option>
+          <mat-option value="Badminton">Badminton</mat-option>
+          <mat-option value="Hockey">Hockey</mat-option>
+          <mat-option value="Volleyball">Volleyball</mat-option>
+          <mat-option value="Snooker">Snooker</mat-option>
+          <mat-option value="Baseball">Baseball</mat-option>
+          <mat-option value="Polo">Polo</mat-option>
+          <mat-option value="American Football">American football</mat-option>
+          <mat-option value="Rugby">Rugby</mat-option>
+          <mat-option value="Darts">Darts</mat-option>
+          <mat-option value="Futsal">Futsal</mat-option>
+          <mat-option value="Beach Volleyball">Beach Volleyball</mat-option>
+          <mat-option value="Cricket">Cricket</mat-option>
+          <mat-option value="Squash">Squash</mat-option>
+          <mat-option value="Golf">Golf</mat-option>
+          <mat-option value="Curling">Curling</mat-option>
+          <mat-option value="Box">Box</mat-option>
+          <mat-option value="Chess">Chess</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Play location</ng-template>
+      <mat-form-field>
+        <input matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="locatie" placeholder="Location" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+  <form [formGroup]="thirdFormGroup">
+    <ng-template matStepLabel>Total cost(lei)</ng-template>
+    <mat-form-field>
+      <input matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="totalCost" placeholder="Total cost(lei)" (keypress)="numberOnly($event)"  required>
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fourthFormGroup">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel><label translate="">Event time</label></ng-template>
+      <mat-form-field>
+        <input matInput [min]="currentDate" [matDatepicker]="picker" placeholder="choose date"
+               formControlName="firstCtrl" (dateInput)="addDate('input', $event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field>
+        <mat-select placeholder="choose hour" [formControl]="hourControl" (selectionChange)="onChange($event)"
+                    required>
+          <mat-option>--</mat-option>
+          <div *ngFor="let hour of hours">
+            <mat-option *ngIf="validateHour(hour)" [value]="hour">
+              {{hour}}
+            </mat-option>
+          </div>
+        </mat-select>
+        <mat-error *ngIf="hourControl.hasError('required')"></mat-error>
+        <mat-hint>{{hourControl.value?.sound}}</mat-hint>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext translate=""><label>next</label></button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fifthFormGroup">
+    <form [formGroup]="fifthFormGroup" >
+      <ng-template matStepLabel>How many persons will participate?</ng-template>
+      <mat-form-field >
+        <input matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="maximumNumberOfPersons" placeholder="Number of persons" (keypress)="numberOnly($event)" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="sixthFormGroup">
+    <form [formGroup]="sixthFormGroup" class="form-limit">
+      <ng-template matStepLabel>Description</ng-template>
+      <mat-form-field class="bigger-width">
+        <input matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="description" placeholder="Description" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    Event can now be created.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="concatenate()">Create event</button>
+    </div>
+  </mat-step>
+
+</mat-vertical-stepper>

@@ -1,7 +1,9 @@
 package com.example.demo.resource;
 
+import com.example.demo.model.Event;
 import com.example.demo.model.Room;
 import com.example.demo.model.User;
+import com.example.demo.model.dto.EventDto;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,11 @@ public class UserResource {
         return userService.findall();
     }
 
+    @RequestMapping(value = "/allll", method = RequestMethod.GET)
+    public List<User> all(){
+        return userService.all();
+    }
+
     @RequestMapping(value = "/allRooms/{id}", method = RequestMethod.GET)
     public List<Room> findallRooms(@PathVariable Integer id){
         return userService.findRoomsForAUser(userService.findById(id));
@@ -40,6 +47,11 @@ public class UserResource {
 
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
     public UserDto findByUsername(@PathVariable String username){
-        return userService.findByUsername(username);
+        return userService.findUserDtoByUsername(username);
+    }
+
+    @RequestMapping(value = "/{username}/events", method = RequestMethod.GET)
+    public List<Event> getEventsByUserId(@PathVariable String username){
+        return userService.findUserDtoByUsername(username).getEventList();
     }
 }

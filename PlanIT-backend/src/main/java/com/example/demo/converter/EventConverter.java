@@ -21,7 +21,6 @@ public class EventConverter {
         eventDto.setOwner(event.getOwner());
         eventDto.setSport(event.getSport());
         eventDto.setSubscribedPersons(event.getSubscribedPersons());
-        eventDto.setUserList(event.getUserList());
 
         return eventDto;
     }
@@ -40,7 +39,6 @@ public class EventConverter {
         event.setOwner(eventDto.getOwner());
         event.setSport(eventDto.getSport());
         event.setSubscribedPersons(eventDto.getSubscribedPersons());
-        event.setUserList(eventDto.getUserList());
 
         return event;
     }

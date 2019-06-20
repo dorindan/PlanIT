@@ -29,13 +29,10 @@ public class WebSocketResource {
     }
 
     @MessageMapping("/{roomName}/{username}")
-    private void sendMessageToPrivateRoom(String message,@DestinationVariable String roomName, @DestinationVariable String username) throws IOException {
+    private void sendMessageToPrivateRoom(String message,
+                                          @DestinationVariable String roomName,
+                                          @DestinationVariable String username) {
         messageService.save(message,roomName,username);
-        this.template.convertAndSend("/privateRoom/" + roomName, message);
-    }
-
-    @MessageMapping("/send/message")
-    public void onReceivedMesage(String message){
-        this.template.convertAndSend("/chat",  new SimpleDateFormat("HH:mm:ss").format(new Date())+"- "+message);
+        this.template.convertAndSend("/privateRoom/" + roomName, new Message(message,username));
     }
 }
