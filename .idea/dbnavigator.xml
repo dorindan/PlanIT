@@ -31,6 +31,9 @@
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
     <mapping file-url="file://$PROJECT_DIR$/PlanIT-backend/src/main/resources/db/migration/V1.0.1__create_chat_tables.sql" connection-id="virtual-postgres-connection" session-id="MAIN" current-schema="" />
     <mapping file-url="file://$PROJECT_DIR$/PlanIT-backend/src/main/resources/db/migration/V1.0.3__change_message_user_id_to_username.sql" connection-id="virtual-postgres-connection" session-id="MAIN" current-schema="" />
@@ -193,20 +196,17 @@
           <content-type name="Java" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
-          <content-type name="JPA QL" enabled="true" />
           <content-type name="JavaScript" enabled="true" />
+          <content-type name="JSON" enabled="true" />
+          <content-type name="JSON5" enabled="true" />
           <content-type name="JSP" enabled="true" />
           <content-type name="JSPx" enabled="true" />
           <content-type name="Groovy" enabled="true" />
           <content-type name="FTL" enabled="true" />
-          <content-type name="TML" enabled="true" />
           <content-type name="GSP" enabled="true" />
-          <content-type name="ASP" enabled="true" />
           <content-type name="VTL" enabled="true" />
           <content-type name="AIDL" enabled="true" />
           <content-type name="YAML" enabled="true" />
-          <content-type name="Flex" enabled="true" />
-          <content-type name="Bash" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
       </qualified-text-editor>

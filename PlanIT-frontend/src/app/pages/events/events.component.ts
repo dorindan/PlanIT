@@ -33,8 +33,6 @@ export class EventsComponent implements OnInit {
               public eventService : EventService) { }
 
   openDialog(element) {
-    console.log(element);
-    console.log(this.subscribedevents);
     let subscribed : boolean = false;
     this.subscribedevents.forEach(event =>{
       if (event.id === element.id){
@@ -54,16 +52,12 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
     this.loggedUserUsername = sessionStorage.getItem('token');
     this.eventService.getEvents().subscribe(response => {
-      // console.log(response);
       this.dataSource.data = response;
       this.events = response;
     });
-    // this.events.push(new Event('a','a',12,'asd',4,'asfg',new User('a','b')))
     this.dataSource.paginator = this.paginator;
 
-
     this.eventService.getSubscribedEvents(this.loggedUserUsername).subscribe(response => {
-      // console.log(response);
       this.subscribedevents = response;
     });
   }
@@ -110,7 +104,6 @@ export class EventsComponent implements OnInit {
   }
 
   subscribed(event : Event){
-    // console.log(this.subscribedevents);
     return this.subscribedevents.includes(event);
   }
 

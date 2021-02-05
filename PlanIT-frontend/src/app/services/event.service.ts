@@ -15,6 +15,10 @@ export class EventService{
     private apiService: ApiService
   ){}
 
+  getEventUsers(id): Observable<User[]>{
+    return this.apiService.getRequest("api/event/" + id + "/users");
+  }
+
   getEvents(): Observable<Event[]>{
     return this.apiService.getRequest("api/event/all");
   }

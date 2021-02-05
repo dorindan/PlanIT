@@ -16,6 +16,12 @@
   <dt>subscribed</dt>
   <dd *ngIf="subscribed === true"><i class="material-icons">done</i>You are subscribed to this event</dd>
   <dd *ngIf="subscribed === false"><i class="material-icons">clear</i>You are not subscribed to this event</dd>
+  <dt>Subscribed Users</dt>
+  <dd>
+    <div *ngFor="let user of users">
+      {{user.username}}
+    </div>
+  </dd>
 </dl>
 
 <div *ngIf="!subscribed && event.subscribedPersons < event.maximumPersons">

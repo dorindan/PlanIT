@@ -13,7 +13,7 @@ import {UserService} from "../../services/user.service";
 })
 export class EventAddComponent implements OnInit {
   sport: string;
-  isLinear = false;
+  isLinear = true;
   locatie: string;
   totalCost: number;
   currentDate = new Date();
@@ -21,6 +21,7 @@ export class EventAddComponent implements OnInit {
   date = '';
   events: string[] = [];
   time = '00:00';
+  houru: string;
   hours: string[] = [];
   hourControl = new FormControl('', [Validators.required]);
   maximumNumberOfPersons: number;
@@ -54,11 +55,11 @@ export class EventAddComponent implements OnInit {
       firstCtrl: ['', Validators.required]
     });
     this.sixthFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
+      hideRequired: false,
     });
     this.fillHours();
     this.userService.getUserByUsername(sessionStorage.getItem('token')).subscribe(response => {
-      console.log(response);
       this.loggedUser = response;
     });
   }
@@ -125,10 +126,40 @@ export class EventAddComponent implements OnInit {
     }
   }
 
+  validateIT (): boolean{
+    if (this.sport === undefined){
+      this.showSnackbar("Please input a sport");
+      return false;
+    }
+    if (this.locatie === undefined){
+      this.showSnackbar("Please input a location");
+      return false;
+    }
+    if (this.totalCost === undefined){
+      this.showSnackbar("Please input the cost of the event");
+      return false;
+    }
+    if (this.date === ''){
+      this.showSnackbar("Please input a date");
+      return false;
+    }
+    if (this.houru === undefined){
+      this.showSnackbar("Please choose starting hour of the event");
+      return false;
+    }
+    if (this.maximumNumberOfPersons === undefined){
+      this.showSnackbar("Please input how many persons will participate");
+      return false;
+    }
+    return true;
+  }
+
   concatenate() {
+    if (this.validateIT() === false){
+      return;
+    }
     let dateTime: string = this.date.concat(' ').concat(this.time);
     let event: Event = new Event(this.sport,this.locatie, this.totalCost, dateTime, this.maximumNumberOfPersons, this.description, this.loggedUser);
-    console.log(event);
     this.eventService.createEvent(event)
       .subscribe(data => {
         this.showSnackbar('Event created successfully.');

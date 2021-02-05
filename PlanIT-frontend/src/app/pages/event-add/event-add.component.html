@@ -2,7 +2,7 @@
   <!--{{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
 <!--</button>-->
 <a href="events" class="previous">&laquo; Go back to events</a>
-<mat-vertical-stepper [linear]="isLinear" #stepper>
+<mat-vertical-stepper [linear]="false" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Sport</ng-template>
@@ -74,7 +74,7 @@
       </mat-form-field>
       &nbsp;
       <mat-form-field>
-        <mat-select placeholder="choose hour" [formControl]="hourControl" (selectionChange)="onChange($event)"
+        <mat-select [(value)]="houru"  placeholder="choose hour" [formControl]="hourControl" (selectionChange)="onChange($event)"
                     required>
           <mat-option>--</mat-option>
           <div *ngFor="let hour of hours">
@@ -107,7 +107,7 @@
   <mat-step [stepControl]="sixthFormGroup">
     <form [formGroup]="sixthFormGroup" class="form-limit">
       <ng-template matStepLabel>Description</ng-template>
-      <mat-form-field class="bigger-width">
+      <mat-form-field [hideRequiredMarker]="true" class="bigger-width">
         <input matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="description" placeholder="Description" required>
       </mat-form-field>
       <div>

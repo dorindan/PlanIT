@@ -12,8 +12,24 @@
 
 </head>
 <body>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Pick language</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let language of filteredLanguages | async" [value]="language" (click)="chooseLanguage(language)">
+        {{language}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
 <div class="container">
-  <h3 class=" text-center"></h3>
   <div class="messaging">
     <div class="inbox_msg">
       <div class="inbox_people">
@@ -58,7 +74,7 @@
             <div class="outgoing_msg" *ngIf="message.username===loggedUserUsername">
               <div class="sent_msg">
                 <p>{{message.message}}</p>
-                <!--<span class="time_date"> 11:01 AM    |    June 9</span>-->
+                <button id='translatebtneu' (click)='translateMyText(message.message)'>Translate</button>
               </div>
             </div>
 
@@ -67,9 +83,8 @@
               </div>
               <div class="received_msg">
                 <div class="received_withd_msg">
-                  <p>{{message.message}}</p>
+                  <p>{{message.message}}</p> <button id='translatebtnala' (click)='translateFriendText(message.message)'>Translate</button>
                   <br>
-                  <!--<span class="time_date"> 11:01 AM    |    Yesterday</span>-->
                 </div>
               </div>
             </div>

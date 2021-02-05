@@ -2,6 +2,7 @@ package com.example.demo.resource;
 
 import com.example.demo.model.Event;
 import com.example.demo.model.dto.EventDto;
+import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,11 @@ public class  EventResource {
     @RequestMapping(value = "/all", method= RequestMethod.GET)
     public List<Event> findAllEvents(){
         return eventService.findAll();
+    }
+
+    @RequestMapping(value = "/{id}/users", method= RequestMethod.GET)
+    public List<UserDto> getEventUsers(@PathVariable Integer id){
+        return eventService.getEventUsers(id);
     }
 
     @RequestMapping(value = "/subscribe/{username}/{eventId}", method= RequestMethod.POST)

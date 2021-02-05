@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     const user = new User(this.model.username, this.model.password);
-    // console.log(user);
       this.userService.login(user).subscribe(rez => {
         sessionStorage.setItem(
           'token',

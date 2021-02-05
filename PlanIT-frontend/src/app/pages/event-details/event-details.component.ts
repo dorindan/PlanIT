@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatSnackBar} from "@angular/material";
 import {Event} from "../../model/Event";
 import {EventService} from "../../services/event.service";
+import {User} from "../../model/User";
 
 @Component({
   selector: 'app-event-details',
@@ -14,6 +15,7 @@ export class EventDetailsComponent implements OnInit {
   loggedUserUsername : string;
   pricePerPerson : number;
   event : Event;
+  users : User[];
   constructor(@Inject(MAT_DIALOG_DATA) public data,
               public eventService : EventService,
               private snackBar: MatSnackBar) { }
@@ -23,6 +25,9 @@ export class EventDetailsComponent implements OnInit {
     this.event = this.data.event;
     this.loggedUserUsername = this.data.loggedUserUsername;
     this.pricePerPerson = Math.round(this.event.cost * 100.0 / this.event.maximumPersons) / 100;
+    this.eventService.getEventUsers(this.event.id).subscribe(response => {
+      this.users = response;
+    });
   }
 
   showSnackbar(message: string) {
@@ -43,7 +48,6 @@ export class EventDetailsComponent implements OnInit {
 
   unsubscribe(){
     this.eventService.unsubscribe(this.loggedUserUsername,this.event.id).subscribe(rez => {
-      // this.router.navigate(['chat']);
     }, error1 => {
       this.showSnackbar('Something went wrong. Please try again.');
     });

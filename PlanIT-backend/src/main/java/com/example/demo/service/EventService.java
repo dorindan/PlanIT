@@ -11,6 +11,7 @@ import com.example.demo.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +32,14 @@ public class EventService {
     EventConverter eventConverter = new EventConverter();
 
     public List<Event> findAll(){
-        return eventRepository.findAll();
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        List<Event> events = new ArrayList<>();
+        for (Event e : eventRepository.findAll()){
+            if (e.getDateAndHour().after(timestamp)){
+                events.add(e);
+            }
+        }
+        return events;
     }
 
     public Optional<Event> findById(Integer id){
@@ -79,6 +87,15 @@ public class EventService {
 
     public void deleteById(Integer id){
         eventRepository.deleteById(id);
+    }
+
+    public List<UserDto> getEventUsers(Integer id){
+        List<User> l = eventRepository.findById(id).get().getUserList();
+        List<UserDto> lista = new ArrayList<>();
+        for (User u : l){
+            lista.add(userConverter.toUserDto(u));
+        }
+        return lista;
     }
 
 }
